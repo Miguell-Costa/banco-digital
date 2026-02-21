@@ -7,10 +7,10 @@ public class Cliente {
     private String nome;
     private String email;
     private int nif;
-    private List<String> contas;
+    private List<Conta> contas;
 
     // construtor
-    public Cliente(int id, String nome, String email, int nif, List<String> contas) {
+    public Cliente(int id, String nome, String email, int nif, List<Conta> contas) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -51,11 +51,11 @@ public class Cliente {
         this.nif = nif;
     }
 
-    public List<String> getContas() {
+    public List<Conta> getContas() {
         return contas;
     }
 
-    public void setContas(List<String> contas) {
+    public void Conta(List<Conta> contas) {
         this.contas = contas;
     }
 
