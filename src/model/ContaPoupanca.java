@@ -7,8 +7,8 @@ public class ContaPoupanca extends Conta{
     private double taxaJuros;
 
     // construtor
-    public ContaPoupanca(int numeroConta, double saldo, Cliente cliente, List<Transacao> listaTransacoes, double taxaJuros) {
-        super(numeroConta, saldo, cliente, listaTransacoes);
+    public ContaPoupanca(int numeroConta, Cliente cliente, double taxaJuros) {
+        super(numeroConta, cliente);
         this.taxaJuros = taxaJuros;
     }
 
@@ -19,6 +19,12 @@ public class ContaPoupanca extends Conta{
 
     public void setTaxaJuros(double taxaJuros) {
         this.taxaJuros = taxaJuros;
+    }
+
+    @Override
+    public void aplicarJuros() {
+        double valorJuro = getSaldo() * taxaJuros;
+        depositar(valorJuro);
     }
 
     @Override

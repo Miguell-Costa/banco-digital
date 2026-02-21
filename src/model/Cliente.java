@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
@@ -7,15 +8,15 @@ public class Cliente {
     private String nome;
     private String email;
     private int nif;
-    private List<Conta> contas;
+    private List<Conta> listaContas;
 
     // construtor
-    public Cliente(int id, String nome, String email, int nif, List<Conta> contas) {
+    public Cliente(int id, String nome, String email, int nif) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.nif = nif;
-        this.contas = contas;
+        this.listaContas = new ArrayList<>();
     }
 
     // getters e setters
@@ -51,12 +52,20 @@ public class Cliente {
         this.nif = nif;
     }
 
-    public List<Conta> getContas() {
-        return contas;
+    public List<Conta> getListaContas() {
+        return listaContas;
     }
 
-    public void Conta(List<Conta> contas) {
-        this.contas = contas;
+    // metodo para adicionar uma conta ao cliente
+    public void adicionarConta(Conta conta){
+        listaContas.add(conta);
+    }
+
+    // metodo para listar todas as contas do cliente
+    public void listarContas(){
+        for(Conta c: listaContas){
+            System.out.println(c);
+        }
     }
 
     @Override
@@ -66,7 +75,7 @@ public class Cliente {
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 ", nif=" + nif +
-                ", contas=" + contas +
+                ", listaContas=" + listaContas +
                 '}';
     }
 }

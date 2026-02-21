@@ -8,10 +8,10 @@ public class Transacao {
     private LocalDateTime dataHora;
 
     // construtor
-    public Transacao(TipoTransacao tipoTransacao, double valor, LocalDateTime dataHora) {
+    public Transacao(TipoTransacao tipoTransacao, double valor) {
         this.tipoTransacao = tipoTransacao;
         this.valor = valor;
-        this.dataHora = dataHora;
+        this.dataHora = LocalDateTime.now();
     }
 
     // getters e setters

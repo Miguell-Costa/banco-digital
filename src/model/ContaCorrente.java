@@ -1,11 +1,17 @@
 package model;
 
-import java.util.List;
-
 public class ContaCorrente extends Conta{
 
     // construtor
-    public ContaCorrente(int numeroConta, double saldo, Cliente cliente, List<Transacao> listaTransacoes) {
-        super(numeroConta, saldo, cliente, listaTransacoes);
+    public ContaCorrente(int numeroConta, Cliente cliente) {
+        super(numeroConta, cliente);
     }
+
+    // não faz nada
+    @Override
+    public void aplicarJuros() {
+
+    }
+
+
 }
